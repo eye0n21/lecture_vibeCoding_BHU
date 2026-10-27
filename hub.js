@@ -1,7 +1,7 @@
 // ---- 메뉴 (상단 탭 · 메인 카드) ----
 const PAGES=[
  {f:'start.html',n:'시작하기',d:'설치 → 스타터 킷 → 첫 문장'},
- {f:'simulate.html',n:'진행 미리보기',d:'첫 문장부터 기획서.md · DESIGN.md까지'},
+ {f:'simulate.html',n:'진행 미리보기',d:'첫 문장부터 설계 확정 · 뼈대까지'},
  {f:'guide.html',n:'단계 가이드',d:'단계별 목표 · 할 일 · 완료 기준'},
  {f:'prompts.html',n:'프롬프트',d:'복사해서 쓰는 지시문'},
  {f:'types.html',n:'결과물·심사',d:'(가)(나)(다) 유형과 심사표'},
@@ -13,31 +13,33 @@ const PAGES=[
 // ---- 진행 순서 (메인) ----
 const STAGES=[
  {n:'강의 + 환경 점검',d:'복습·설치 확인·스타터 킷·작업법',href:'guide.html#s0'},
- {n:'설계 확정',d:'기능명세서 합치기 → 문제정의문 → 유형 → 인터뷰 → 기획서.md',href:'guide.html#s1'},
- {n:'뼈대 생성',d:'첫 화면과 소개 섹션, 브라우저 확인',href:'guide.html#s2'},
+ {n:'설계 확정',d:'첫 문장 → 문제정의문 → 유형 → 인터뷰 → 기획서.md 확정',href:'guide.html#s1'},
+ {n:'뼈대 생성',d:'같은 대화에서 이어서, 첫 화면부터 섹션마다 확인',href:'guide.html#s2'},
  {n:'시연 기능',d:'핵심 기능 1개, 테스트, 오류 수정',href:'guide.html#s3'},
- {n:'다듬기·발표 준비',d:'AI 티 점검, 시연 모드, 2분 동선',href:'guide.html#s4'},
+ {n:'다듬기·발표 준비',d:'AI 티 점검, 발표 대본, AI 활용 정리',href:'guide.html#s4'},
  {n:'제출',d:'폴더 압축 → USB → 갤러리 등록',href:'guide.html#s5'},
  {n:'발표·심사',d:'팀별 발표와 피드백',href:'gallery.html#present'},
 ];
 const STEPS=[
- {k:0,title:'0 강의 + 환경 점검',goal:'10팀 모두 Claude Code가 파일을 만들고, 더블클릭으로 열리는 것을 확인',
-  todo:['VS Code + Claude Code 로그인 상태 확인(팀원 전원)','스타터킷.zip 압축 풀고 폴더 이름을 팀번호_아이템명으로','VS Code에서 폴더 열기 → Claude 채팅창','테스트 지시로 test.html 생성 → 더블클릭 확인','지시 담당 1명, 확인 담당 1명 정하기'],
-  done:'팀의 노트북 1대 이상에서 test.html이 열림',stuck:'노트북 한 대라도 되면 그 노트북으로 시작. 나머지는 Part 2 동안 강사가 1:1'},
- {k:1,title:'1 설계 확정',goal:'Claude Code 인터뷰를 끝내고 기획서.md가 저장됨',
-  todo:['2일차에 각자 쓴 기능명세서를 모아 기능명세서.md에 5개 이내로, ★ 1개','디자인 방향 (A) getdesign / (B) 참고 캡처 / (C) 대화 중 하나 — 못 정하면 (C)','“claude.md 파일을 읽고 html 페이지 작성 시작해”','1일차 문제정의문(문제정의서 8번)을 그대로 붙이기 → 다섯 칸 확인','결과물 유형 (가)/(나)/(다) 고르기 — 기본 (다)','인터뷰 6묶음 답하기 → 요약 확인 → 기획서.md 저장'],
-  done:'폴더에 기획서.md와 DESIGN.md가 생김',stuck:'질문에 답을 못 하겠으면 “추천해줘”. 인터뷰는 20분 상한 — 넘어가면 “남은 질문은 추천안으로 채우고 요약 보여줘”'},
- {k:2,title:'2 뼈대 생성',goal:'index.html이 열리고 첫 화면에 아이템 소개가 보임',
-  todo:['Claude Code가 “브라우저에서 확인하세요”라고 할 때마다 index.html 더블클릭','첫 화면: 대상자의 말 한 문장이 보이는가','소개·문제 섹션에 문제정의문이 들어갔는가','한 섹션 = 한 지시. 확인 후 다음 섹션','뼈대가 보이면 폴더 복사해서 백업(팀명_뼈대)'],
-  done:'첫 화면 + 소개 섹션이 브라우저에서 보임',stuck:'이 단계가 끝날 때까지 빈 화면이면 손 들기 — 강사가 우선 지원'},
- {k:3,title:'3 시연 기능',goal:'핵심 기능 1개가 클릭·입력에 반응함',
-  todo:['새 대화 시작 권장: “CLAUDE.md와 기획서.md를 읽고 이어서 진행해”','“★ 기능만 만들어줘. 다른 건 다음에”','확인 담당이 실제로 눌러 보기 — 결과 화면에 문제정의문의 ‘변화’가 보이는가','로그인·결제·지도·문자는 화면만 흉내, “다음 단계”로 표시','멀티 페이지 팀은 페이지 추가와 메뉴 연결','기능이 되면 폴더 복사해서 백업(팀명_시연)'],
+ {k:0,title:'강의 + 환경 점검',goal:'Claude Code가 파일을 만들고, 더블클릭으로 열린다',
+  todo:['스타터킷.zip 압축 풀기 → 폴더 이름 팀번호_아이템명','VS Code에서 폴더 열기 → Claude 채팅창','test.html 만들기 → 더블클릭으로 열어 보기','역할 정하기: 지시 담당 1명, 확인 담당 1명'],
+  done:'노트북 1대 이상에서 test.html이 열림',stuck:'한 대라도 되면 그 노트북으로 시작. 나머지는 강사가 1:1로 봐 줍니다'},
+ {k:1,title:'설계 확정',goal:'인터뷰로 기획서.md를 채워 확정하고, DESIGN.md를 만든다',
+  todo:['#시작 전 · 팀이 직접 (안 해도 시작은 됩니다)','기획서.md 0절에 문제정의문(문제정의서 8번) 붙여 넣기','기획서.md 3절 표에 2일차 기능 초안 모으기 — 5개 이내, ★ 1개','디자인 방향 정하기 — (A)면 DESIGN.md를, (B)면 캡처를 폴더에',
+   '#Claude Code가 이끄는 순서 · 대답만','“claude.md 파일을 읽고 html 페이지 작성 시작해”','문제정의문 다섯 칸 확인 — 0절이 비어 있으면 이때 붙여 넣기','결과물 유형 고르기 — 기본 (다)','인터뷰 6묶음 답하기 — 묶음마다 기획서.md에 적힘','요약 보고 “이대로 해줘” → 기획서.md 상태 ‘확정’'],
+  done:'기획서.md 상태가 ‘확정’, 폴더에 DESIGN.md가 생김',stuck:'답이 막히면 “추천해줘”. 인터뷰가 20분을 넘으면 “남은 질문은 추천안으로 채우고 요약 보여줘”',
+  more:['simulate.html','이 단계 미리 보기 →']},
+ {k:2,title:'뼈대 생성',goal:'같은 대화에서 이어서, 첫 화면부터 섹션이 하나씩 보인다',
+  todo:['#새 프롬프트 없이 같은 대화에서 이어집니다','“브라우저에서 확인하세요”가 나오면 index.html 더블클릭','첫 화면에 대상자의 말 한 문장이 있는가','맞으면 “확인했어”, 다르면 고칠 점을 한 가지씩','소개 → 문제와 대상 → 기능 소개도 같은 방식으로 확인','백업: 폴더 복사 (팀명_뼈대)'],
+  done:'첫 화면부터 기능 소개까지 브라우저에서 보임',stuck:'빈 화면이 계속되면 손 들기. 강사가 우선 지원합니다'},
+ {k:3,title:'시연 기능',goal:'핵심 기능 1개가 클릭·입력에 반응한다',
+  todo:['Claude Code가 시연 기능 차례라고 하면 그대로 진행','대화가 끊겼으면 새 대화에서 “CLAUDE.md와 기획서.md를 읽고 이어서 진행해”','확인 담당이 직접 눌러 보기 — 문제정의문의 ‘변화’가 보이는가','로그인·결제·지도·문자는 흉내만, ‘다음 단계’로 표시','멀티 페이지면 페이지 추가와 메뉴 연결','백업: 폴더 복사 (팀명_시연)'],
   done:'누르면 화면이 바뀌는 기능 1개',stuck:'두 번 고쳐도 안 되면 “방금 전 상태로 되돌려줘” → 기능을 더 작게 쪼개서 다시'},
- {k:4,title:'4 다듬기·발표 준비',goal:'시연 리허설 1회 완료',
-  todo:['“AI 티 나는 부분 5개 찾아서 고쳐줘”','“시연 모드로 정리해줘” — 첫 화면에서 시연까지 가장 짧게','팀 섹션에 학과별 역할 적기(연합팀 가산점)','“AI 활용 과정 정리해줘” → 발표 담당이 자기 말로','“발표 대본 도와줘” → 2분 동선 표','발표자가 아닌 사람이 눌러 보며 2분 재기'],
-  done:'리허설 1회, 2분 안에 끝남',stuck:'시간이 없으면 다듬기를 멈추고 리허설부터. 되는 기능 1개가 예쁜 기능 3개보다 낫습니다'},
- {k:5,title:'5 제출',goal:'갤러리에 10팀 등록',
-  todo:['“제출 점검해줘” 실행 → 지적된 것 고치기','폴더 이름 팀번호_아이템명, index.html이 폴더 바로 안에','폴더 전체 압축(zip) → 강사 USB','강사 노트북에서 열리는지 같이 확인'],
+ {k:4,title:'다듬기·발표 준비',goal:'AI 티를 걷어 내고 발표에 쓸 대본과 AI 활용 설명을 준비한다',
+  todo:['“AI 티 나는 부분 5개 찾아서 고쳐줘”','“발표 대본 도와줘”','“AI 활용 과정 정리해줘”'],
+  done:'발표 대본과 AI 활용 정리가 준비됨',stuck:'시간이 없으면 다듬기를 멈추고 리허설부터. 되는 기능 1개가 예쁜 기능 3개보다 낫습니다'},
+ {k:5,title:'제출',goal:'갤러리에 우리 팀 카드가 켜진다',
+  todo:['“제출 점검해줘” → 지적된 것 고치기','폴더 이름 팀번호_아이템명, index.html은 폴더 바로 안에','폴더 전체를 zip으로 압축 → 강사 USB','강사 노트북에서 열리는지 같이 확인'],
   done:'갤러리 카드가 켜짐',stuck:'압축이 안 되면 폴더째 USB에 복사'},
 ];
 const PROMPTS=[
@@ -53,7 +55,6 @@ const PROMPTS=[
  {t:'상태 저장 → 새 대화',p:'지금까지 결정한 것과 현재 상태를 기획서.md에 정리해서 저장해줘'},
  {t:'새 대화에서 이어가기',p:'CLAUDE.md와 기획서.md를 읽고 이어서 진행해'},
  {t:'AI 티 점검',p:'AI 티 나는 부분 5개 찾아서 고쳐줘'},
- {t:'발표 준비',p:'시연 모드로 정리해줘'},
  {t:'발표 준비',p:'AI 활용 과정 정리해줘'},
  {t:'발표 준비',p:'발표 대본 도와줘'},
  {t:'제출 전',p:'제출 점검해줘'},
@@ -82,11 +83,16 @@ if(mg){const on=TEAMS.filter(t=>t.dir).length;
 
 // ---- 단계 가이드 ----
 const sw=$('steps');
-if(sw)STEPS.forEach((s,i)=>{const el=document.createElement('div');el.className='step';el.id='s'+s.k;el.dataset.k=s.k;
-  el.innerHTML=`<h3>${s.title}</h3><p style="margin:6px 0 0"><b>목표</b> · ${s.goal}</p>
-  <div class="cols"><div><h4>할 일</h4><ul class="chk">${s.todo.map((t,j)=>`<li><input type="checkbox" data-id="s${i}-${j}"><span>${t}</span></li>`).join('')}</ul></div>
-  <div><h4>완료 기준</h4><p class="done-note">${s.done}</p></div><div><h4>막혔을 때</h4><p style="font-size:15px;color:var(--ink-2)">${s.stuck}</p></div></div>`;sw.appendChild(el);});
-try{document.querySelectorAll('.chk input[data-id]').forEach(c=>{c.checked=localStorage.getItem('chk_'+c.dataset.id)==='1';c.onchange=()=>localStorage.setItem('chk_'+c.dataset.id,c.checked?'1':'0');});}catch(e){}
+const say=t=>t.replace(/“([^”]+)”/g,'<span class="say">$1</span>'); // Claude Code에 그대로 입력하는 말
+if(sw){
+  STEPS.forEach((s,i)=>{const el=document.createElement('div');el.className='step';el.id='s'+s.k;
+  el.innerHTML=`<div class="step-h"><span class="sn">${s.k}</span><div><h3>${s.title}</h3><p class="goal">${s.goal}</p></div><span class="prog"></span></div>
+  <div class="step-b"><ul class="chk">${s.todo.map((t,j)=>t.startsWith('#')?`<li class="grp">${t.slice(1)}</li>`:`<li><label><input type="checkbox" data-id="s${i}-${j}"><span>${say(t)}</span></label></li>`).join('')}</ul>
+  <div class="side"><div class="box ok"><h4>완료 기준</h4><p>${s.done}</p></div><div class="box help"><h4>막혔을 때</h4><p>${say(s.stuck)}</p></div>${s.more?`<a class="more" href="${s.more[0]}">${s.more[1]}</a>`:''}</div></div>`;sw.appendChild(el);});
+}
+const prog=()=>document.querySelectorAll('.step').forEach(el=>{const c=el.querySelectorAll('input'),n=[...c].filter(x=>x.checked).length;el.querySelector('.prog').textContent=`${n}/${c.length}`;el.classList.toggle('all',n===c.length);});
+try{document.querySelectorAll('.chk input[data-id]').forEach(c=>{c.checked=localStorage.getItem('chk_'+c.dataset.id)==='1';c.onchange=()=>{localStorage.setItem('chk_'+c.dataset.id,c.checked?'1':'0');prog();};});}catch(e){}
+if(sw)prog();
 
 // ---- 프롬프트 ----
 const pg=$('promptGrid');

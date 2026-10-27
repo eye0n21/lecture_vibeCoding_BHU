@@ -7,7 +7,7 @@ const PAGES=[
  {f:'types.html',n:'결과물·심사',d:'(가)(나)(다) 유형과 심사표'},
  {f:'faq.html',n:'막혔을 때',d:'자주 막히는 문제 — 먼저 여기'},
  {f:'files.html',n:'자료',d:'스타터 킷 · 샘플 내려받기'},
- {f:'gallery.html',n:'갤러리·발표',d:'제출된 팀 페이지 · 발표 준비'},
+ {f:'gallery.html',n:'팀 갤러리',d:'제출된 팀 페이지 · 발표 순서'},
 ];
 
 // ---- 진행 순서 (메인) ----
@@ -18,7 +18,7 @@ const STAGES=[
  {n:'시연 기능',d:'핵심 기능 1개, 테스트, 오류 수정',href:'guide.html#s3'},
  {n:'다듬기·발표 준비',d:'AI 티 점검, 발표 대본, AI 활용 정리',href:'guide.html#s4'},
  {n:'제출',d:'폴더 압축 → USB → 갤러리 등록',href:'guide.html#s5'},
- {n:'발표·심사',d:'팀별 발표와 피드백',href:'gallery.html#present'},
+ {n:'발표·심사',d:'팀별 발표와 피드백',href:'gallery.html'},
 ];
 const STEPS=[
  {k:0,title:'강의 + 환경 점검',goal:'Claude Code가 파일을 만들고, 더블클릭으로 열린다',

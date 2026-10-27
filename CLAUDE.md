@@ -3,9 +3,10 @@
 이 저장소는 부산보건대 아이디어톤 3일차 허브 페이지다. GitHub Pages가 main 브랜치 루트를 그대로 서비스한다. 작업자는 강사 한 명이다.
 
 ## 구조
-- index.html — 허브 메인 (지금 단계 · 첫 문장 · 메뉴 카드)
-- flow · start · guide · prompts · types · rubric · faq · files · gallery · present .html — 메뉴별 페이지
-- hub.css · hub.js — 공통 스타일, 상단바·메뉴(PAGES)·단계·프롬프트·팀(TEAMS) 데이터
+- index.html — 허브 메인 (진행 순서 · 첫 문장 · 메뉴 카드)
+- start · simulate · guide · prompts · types(결과물·심사) · faq · files · gallery(갤러리·발표) .html — 메뉴별 페이지. flow·rubric·present.html은 옛 주소용 안내 파일
+- 허브에는 시계 시각(10:00 등)을 넣지 않는다. 일정이 바뀌어도 고칠 필요가 없게. "2분 시연"처럼 규칙인 시간 길이는 괜찮다
+- hub.css · hub.js — 공통 스타일, 상단바·메뉴(PAGES)·진행 순서(STAGES)·단계·프롬프트·팀(TEAMS) 데이터
 - assets/ — 스타터 킷 zip과 개별 파일. 원본은 로컬 03_스타터킷 (고치면 여기에도 복사)
 - samples/single, samples/multi — 강사 샘플 「오늘약」. 건드리지 않음
 - teams/ — 팀 제출물. 팀 폴더를 통째로 넣는다

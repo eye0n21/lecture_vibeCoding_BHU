@@ -12,19 +12,24 @@
 <main class="wrap">
 
 <div class="hero">
-  <h1>오늘 4시간, <em>열리고 · 보이고 · 눌리는</em> 페이지 하나</h1>
+  <h1>오늘, <em>열리고 · 보이고 · 눌리는</em> 페이지 하나</h1>
   <p>막히면 이 허브를 먼저 보세요. 같은 질문이 세 팀 넘게 나오면 강사가 전체에 알립니다.</p>
 </div>
 
-<!-- 지금 단계 -->
-<section id="now">
-  <div class="card green nowcard" id="nowCard"></div>
-  <div class="grid g2" style="margin-top:14px">
-    <div class="card"><h3>첫 문장</h3>
-      <p>스타터 킷 폴더를 VS Code로 연 뒤, Claude 채팅창에 그대로 붙여 넣습니다. 설치가 아직이면 <a href="start.html">시작하기</a>부터.</p>
-      <div class="cmd"><pre>claude.md 파일을 읽고 html 페이지 작성 시작해</pre><button class="copy">복사</button></div></div>
-    <div class="card"><h3>질문 순서</h3><ul><li>① 이 허브의 <a href="faq.html">막혔을 때</a></li><li>② Claude Code에게 증상을 말하기</li><li>③ 15분 넘게 막히면 손 들기</li></ul></div>
+<!-- 진행 순서 -->
+<section id="flow">
+  <div class="kicker">진행 순서</div>
+  <h2>환경 점검부터 발표까지</h2>
+  <p class="lead">단계를 누르면 그 단계의 할 일과 완료 기준으로 갑니다.</p>
+  <div class="timeline" id="timeline"></div>
+  <div class="grid g3">
+    <div class="card"><h3>강사가 하는 일</h3><ul><li>단계 전환과 전체 공지</li><li>뼈대가 안 나온 팀 우선 지원</li><li>USB 수거 → 갤러리 등록</li></ul></div>
+    <div class="card"><h3>팀이 하는 일</h3><ul><li>지시 담당 1명만 Claude Code에 말하기</li><li>단계마다 브라우저에서 직접 열어 확인</li><li>한 시간에 한 번 폴더 복사(백업)</li></ul></div>
+    <div class="card green"><h3>질문 순서</h3><ul><li>① 이 허브의 <a href="faq.html">막혔을 때</a></li><li>② Claude Code에게 증상을 말하기</li><li>③ 15분 넘게 막히면 손 들기</li></ul></div>
   </div>
+  <div class="card" style="margin-top:14px"><h3>첫 문장</h3>
+    <p>스타터 킷 폴더를 VS Code로 연 뒤, Claude 채팅창에 그대로 붙여 넣습니다. 설치가 아직이면 <a href="start.html">시작하기</a>부터, 어떻게 진행되는지 궁금하면 <a href="simulate.html">진행 미리보기</a>를 보세요.</p>
+    <div class="cmd"><pre>claude.md 파일을 읽고 html 페이지 작성 시작해</pre><button class="copy">복사</button></div></div>
 </section>
 
 <!-- 메뉴 -->

@@ -2,8 +2,8 @@
 
 부산보건대 2026 AIDX 아이디어톤 3일차 바이브코딩 허브 페이지. GitHub Pages로 배포.
 
-- index.html — 허브 메인 (지금 단계·첫 문장·메뉴)
-- flow/start/guide/prompts/types/rubric/faq/files/gallery/present.html — 메뉴별 페이지
+- index.html — 허브 메인 (진행 순서·첫 문장·메뉴)
+- start/simulate/guide/prompts/types/faq/files/gallery.html — 메뉴별 페이지 (flow·rubric·present.html은 합친 페이지로 넘겨 주는 안내 파일)
 - hub.css, hub.js — 공통 스타일·상단 메뉴·데이터 (TEAMS 포함)
 - assets/ — 스타터 킷 zip과 개별 파일
 - samples/ — 강사 샘플 「오늘약」 단일/멀티 페이지

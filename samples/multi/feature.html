@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>기능 — 오늘약</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@900&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="메뉴">
+  <div class="안">
+    <a class="로고" href="index.html">오늘약 <small>3조</small></a>
+    <ul><li><a href="index.html">소개</a></li><li><a href="feature.html" aria-current="page">기능</a></li><li><a href="demo.html">시연</a></li><li><a href="team.html">팀</a></li></ul>
+    <a class="버튼 작게" href="demo.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg> 시연</a>
+  </div>
+</nav>
+<div style="height:40px"></div>
+<section class="구역 짙은" id="하루">
+  <div class="안">
+    <div class="섹션머리 등장">
+      <span class="라벨">김순자 어르신의 하루</span>
+      <h2>기능을 나열하는 대신, 하루를 따라갑니다</h2>
+      <p>오늘약이 있는 날, 어르신과 딸과 방문간호사에게 무엇이 달라지는지 시간 순서로 적었습니다.</p>
+    </div>
+    <div class="시간축 등장">
+      <ol>
+        <li><span class="시각">지난주 금요일 · 약국</span><h3>약 등록</h3><p>약사가 어르신 휴대폰에 오늘약을 열고 약봉투를 보며 혈압약·당뇨약·위장약을 등록합니다. 정형외과 무릎약은 저녁 칸에.</p></li>
+        <li class="강조"><span class="시각">오전 8시</span><h3>아침 약, 버튼 하나</h3><p>"아침 약: 혈압약, 당뇨약"이 큰 글씨로 보입니다. 드신 뒤 "먹었어요"를 누르면 도장이 찍히고 8시 12분이 적힙니다.</p></li>
+        <li><span class="시각">낮 12시 반</span><h3>점심 약</h3><p>위장약 하나뿐인 점심은 자주 빠뜨리던 시간입니다. 점심 칸이 비어 있는 것이 보여서 드시고 누릅니다.</p></li>
+        <li><span class="시각">저녁 7시 · 서울</span><h3>딸의 화면</h3><p>아침·점심은 도장, 저녁은 "아직". 8시 전이라 알림은 없습니다. 전화를 걸어 묻는 대신 화면을 보고 기다립니다.</p></li>
+        <li class="강조"><span class="시각">저녁 8시</span><h3>체크가 없으면 알림</h3><p>8시가 지나도 저녁 칸이 비어 있으면 딸 화면에 "저녁 약이 아직이에요"와 전화 버튼이 뜹니다.</p></li>
+        <li><span class="시각">다음 달 · 보건소</span><h3>기록을 함께 보기</h3><p>방문간호사가 한 달치 기록을 어르신과 함께 봅니다. 저녁 약이 자주 빠졌다면 복용 시간을 조정하거나 병원에 전달합니다.</p></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="구역" id="기능">
+  <div class="안">
+    <div class="섹션머리 등장">
+      <span class="라벨">복약 안내표처럼 읽는 기능</span>
+      <h2>어르신은 버튼 하나, 나머지는 서비스가 합니다</h2>
+      <p>약봉투 뒷면의 복약 안내표 형식을 빌렸습니다. 오늘 발표에서는 두 번째 줄을 실제로 눌러 보여드립니다.</p>
+    </div>
+    <table class="안내표 등장">
+      <thead><tr><th>기능</th><th>어르신이 하는 일</th><th>서비스가 하는 일</th></tr></thead>
+      <tbody>
+        <tr><td>약 등록<small>처음 한 번</small></td><td>약국에서 약사와 함께 약봉투를 보며 이름과 시간을 등록</td><td>병원이 달라도 아침·점심·저녁 세 칸으로 정리<ul><li>복수 시간대 선택</li><li>한 번 등록하면 매일 반복</li></ul></td></tr>
+        <tr class="시연행"><td>오늘 복약 체크<small>매일</small></td><td>약을 먹고 "먹었어요" 버튼 하나</td><td>시간을 기록하고 칸에 도장<ul><li>잘못 누르면 한 번 더 눌러 취소</li><li>글자 20px 이상, 버튼은 화면 폭 전체</li></ul></td></tr>
+        <tr><td>가족 공유<small>자동</small></td><td>아무것도 안 해도 됨</td><td>자녀 화면에 오늘 상태 표시, 저녁 8시까지 체크가 없으면 알림과 전화 버튼<ul><li>필요한 날에만 전화</li><li>방문간호 때 한 달 기록 열람</li></ul></td></tr>
+      </tbody>
+    </table>
+    <p style="margin-top:32px" class="등장"><a class="버튼" href="demo.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg> 시연 화면에서 눌러보기</a></p>
+  </div>
+</section>
+
+<section class="구역 연한" id="범위">
+  <div class="안">
+    <div class="둘로">
+      <div class="섹션머리 등장" style="margin-bottom:0">
+        <span class="라벨">솔직한 범위</span>
+        <h2>오늘 실제로 되는 것과 흉내만 낸 것</h2>
+        <p>프로토타입은 서버 없이 한 페이지 안에서 동작합니다. 무엇이 진짜이고 무엇이 다음 단계인지 심사위원께 그대로 말씀드립니다.</p>
+      </div>
+      <table class="범위표 등장">
+        <thead><tr><th>기능</th><th>오늘 시연</th><th>다음 단계</th></tr></thead>
+        <tbody>
+          <tr><td>약 등록</td><td>이름과 시간대를 직접 입력해 목록에 추가</td><td>약봉투 사진 인식, 처방전 연동</td></tr>
+          <tr><td>오늘 복약 체크</td><td>버튼을 누르면 시간 기록, 도장, 재클릭 취소</td><td>기록 저장, 날짜별 달력</td></tr>
+          <tr><td>가족 공유</td><td>같은 페이지 안에서 상태 반영</td><td>계정 연결, 8시 알림 발송, 전화 연결</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="안">
+    <div>
+      <h4>오늘약 · 3조</h4>
+      <p>2026 AIDX 기반 부산광역시 지역사회 현안 해결 아이디어톤<br>헬스케어 분야 · 고령자 만성질환과 복약관리</p>
+    </div>
+    <div><h4>페이지</h4><ul><li><a href="index.html">소개</a></li><li><a href="feature.html">기능</a></li><li><a href="demo.html">시연</a></li><li><a href="team.html">팀</a></li></ul></div>
+    <div><h4>운영 주체(안)</h4><ul><li>감나무골 약국 (가상)</li><li>사하구 보건소 방문간호팀 (가상)</li></ul></div>
+    <div class="바닥">등장하는 인물·장소·기관은 모두 가상이며, 이 페이지는 발표용 프로토타입입니다. 실제 서버와 연결되어 있지 않습니다.</div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>오늘약 — 3조</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@900&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="메뉴">
+  <div class="안">
+    <a class="로고" href="#소개">오늘약 <small>3조</small></a>
+    <ul><li><a href="#소개">소개</a></li><li><a href="#문제">문제</a></li><li><a href="#하루">하루</a></li><li><a href="#기능">기능</a></li><li><a href="#시연">시연</a></li><li><a href="#팀">팀</a></li></ul>
+    <a class="버튼 작게" href="#시연"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg> 시연</a>
+  </div>
+</nav>
+
+<header class="히어로" id="소개">
+  <div class="안">
+    <div>
+      <span class="라벨">헬스케어 · 고령자 복약관리</span>
+      <h1>약봉투가 몇 개여도<br>오늘 먹을 약은 <em>세 칸</em></h1>
+      <p class="소개">병원마다 다른 처방을 아침·점심·저녁으로 정리하고, 먹었는지는 버튼 하나로 기록합니다. 멀리 사는 가족은 전화 대신 화면으로 확인합니다.</p>
+      <div class="버튼들">
+        <a class="버튼" href="#시연"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg> 시연 화면 보기</a>
+        <a class="버튼 테두리" href="#하루">김순자 어르신의 하루 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+      </div>
+      <blockquote class="인용">“약이 여섯 가지인데, 아침에 뭘 먹었는지 저녁이면 기억이 안 나요.”<span>감나무골에 혼자 사는 김순자 어르신(74세, 가명)</span></blockquote>
+    </div>
+    
+    <div class="봉투틀">
+      <svg class="봉투" viewBox="0 0 460 560" role="img" aria-label="오늘약 약봉투. 아침 칸에 복용 도장이 찍혀 있음">
+        <path class="종이면" d="M20 40 h420 v500 l-14 -10 l-14 10 l-14 -10 l-14 10 l-14 -10 l-14 10 l-14 -10 l-14 10 l-14 -10 l-14 10 l-14 -10 l-14 10 l-14 -10 l-14 10 l-14 -10 l-14 10 l-14 -10 l-14 10 l-14 -10 l-14 10 l-14 -10 l-14 10 l-14 -10 l-14 10 l-14 -10 l-14 10 l-14 -10 l-14 10 l-14 -10 l-14 10 l-14 -10 l-14 10 z"/>
+        <rect class="띠" x="20" y="40" width="420" height="64"/>
+        <text class="띠글" x="40" y="68" font-size="18">감나무골 약국</text>
+        <text class="띠글" x="40" y="90" font-size="11" opacity="0.85">부산 사하구 · 가상의 약국입니다</text>
+        <text class="띠글" x="420" y="80" font-size="22" text-anchor="end">오늘약</text>
+        <text class="작은글" x="40" y="140">환자</text>
+        <text class="칸글" x="40" y="162" font-size="20">김순자 (74세)</text>
+        <text class="작은글" x="40" y="196">처방</text>
+        <text class="칸글" x="40" y="218" font-size="14">감나무골 내과 · 사하 정형외과</text>
+        <text class="작은글" x="420" y="218" text-anchor="end" id="봉투날짜">오늘</text>
+        
+      <rect class="칸선" x="40" y="250" width="120" height="150"/>
+      <text class="칸글" x="100" y="278" text-anchor="middle">아침</text>
+      <text class="약글" x="100" y="300" text-anchor="middle" id="봉투약-아침"></text>
+      <g class="도장" id="도장-아침">
+        <circle cx="100" cy="352" r="30"/>
+        <text x="100" y="350" text-anchor="middle">복용</text>
+        <text class="시각" x="100" y="366" text-anchor="middle"></text>
+      </g>
+      <rect class="칸선" x="170" y="250" width="120" height="150"/>
+      <text class="칸글" x="230" y="278" text-anchor="middle">점심</text>
+      <text class="약글" x="230" y="300" text-anchor="middle" id="봉투약-점심"></text>
+      <g class="도장" id="도장-점심">
+        <circle cx="230" cy="352" r="30"/>
+        <text x="230" y="350" text-anchor="middle">복용</text>
+        <text class="시각" x="230" y="366" text-anchor="middle"></text>
+      </g>
+      <rect class="칸선" x="300" y="250" width="120" height="150"/>
+      <text class="칸글" x="360" y="278" text-anchor="middle">저녁</text>
+      <text class="약글" x="360" y="300" text-anchor="middle" id="봉투약-저녁"></text>
+      <g class="도장" id="도장-저녁">
+        <circle cx="360" cy="352" r="30"/>
+        <text x="360" y="350" text-anchor="middle">복용</text>
+        <text class="시각" x="360" y="366" text-anchor="middle"></text>
+      </g>
+        <text class="작은글" x="40" y="440">식후 30분 · 저녁은 8시까지</text>
+        <text class="작은글" x="40" y="462">먹으면 칸에 도장이 찍히고, 딸 박지은 씨 화면에도 보입니다</text>
+        <line x1="40" y1="490" x2="420" y2="490" stroke="#d9e2dc" stroke-width="1.5"/>
+        <text class="작은글" x="40" y="512">이 봉투는 아래 시연 화면과 연결되어 있습니다</text>
+      </svg>
+      <span class="봉투안내">시연에서 "먹었어요"를 누르면 도장이 찍힙니다</span>
+    </div>
+  </div>
+</header>
+
+<section class="구역" id="문제">
+  <div class="안">
+    <div class="섹션머리 가운데 등장">
+      <span class="라벨">누가, 무엇이 불편한가</span>
+      <h2>매일 저녁 7시 40분, 같은 통화</h2>
+      <p>1일차 인터뷰에서 들은 어르신과 딸의 말을 통화 그대로 옮겼습니다.</p>
+    </div>
+    <div class="통화 등장">
+      <p class="시각줄">저녁 7:40 · 서울 ↔ 부산 사하구</p>
+      <div class="말풍선 딸"><div class="얼굴">지</div><div class="말">엄마, 저녁 약 드셨어요?<small>박지은 (딸)</small></div></div>
+      <div class="말풍선"><div class="얼굴">순</div><div class="말">먹었지… 아니다, 그게 아침 거였나. 봉투가 두 개라 헷갈려.<small>김순자 어르신</small></div></div>
+      <div class="말풍선 딸"><div class="얼굴">지</div><div class="말">초록 봉투 말고 흰 봉투요. 무릎약은 저녁이에요.<small>박지은 (딸)</small></div></div>
+      <div class="말풍선"><div class="얼굴">순</div><div class="말">글씨가 작아서 뭐가 뭔지 모르겠다. 내일 또 전화해 줘.<small>김순자 어르신</small></div></div>
+    </div>
+    <div class="통화요약 등장">
+      <div><h3>어르신 쪽</h3><p>병원 2곳, 약 4가지. 봉투마다 "1일 2회", "저녁 식후"가 섞여 있어 아침에 먹은 약을 저녁에 다시 먹거나 빠뜨리는 일이 생깁니다.</p></div>
+      <div><h3>딸 쪽</h3><p>확인할 방법이 전화뿐이라 매일 묻게 되고, 묻는 쪽도 듣는 쪽도 부담입니다. 바쁜 날 전화를 못 하면 하루 종일 마음이 쓰입니다.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="구역 짙은" id="하루">
+  <div class="안">
+    <div class="섹션머리 등장">
+      <span class="라벨">김순자 어르신의 하루</span>
+      <h2>기능을 나열하는 대신, 하루를 따라갑니다</h2>
+      <p>오늘약이 있는 날, 어르신과 딸과 방문간호사에게 무엇이 달라지는지 시간 순서로 적었습니다.</p>
+    </div>
+    <div class="시간축 등장">
+      <ol>
+        <li><span class="시각">지난주 금요일 · 약국</span><h3>약 등록</h3><p>약사가 어르신 휴대폰에 오늘약을 열고 약봉투를 보며 혈압약·당뇨약·위장약을 등록합니다. 정형외과 무릎약은 저녁 칸에.</p></li>
+        <li class="강조"><span class="시각">오전 8시</span><h3>아침 약, 버튼 하나</h3><p>"아침 약: 혈압약, 당뇨약"이 큰 글씨로 보입니다. 드신 뒤 "먹었어요"를 누르면 도장이 찍히고 8시 12분이 적힙니다.</p></li>
+        <li><span class="시각">낮 12시 반</span><h3>점심 약</h3><p>위장약 하나뿐인 점심은 자주 빠뜨리던 시간입니다. 점심 칸이 비어 있는 것이 보여서 드시고 누릅니다.</p></li>
+        <li><span class="시각">저녁 7시 · 서울</span><h3>딸의 화면</h3><p>아침·점심은 도장, 저녁은 "아직". 8시 전이라 알림은 없습니다. 전화를 걸어 묻는 대신 화면을 보고 기다립니다.</p></li>
+        <li class="강조"><span class="시각">저녁 8시</span><h3>체크가 없으면 알림</h3><p>8시가 지나도 저녁 칸이 비어 있으면 딸 화면에 "저녁 약이 아직이에요"와 전화 버튼이 뜹니다.</p></li>
+        <li><span class="시각">다음 달 · 보건소</span><h3>기록을 함께 보기</h3><p>방문간호사가 한 달치 기록을 어르신과 함께 봅니다. 저녁 약이 자주 빠졌다면 복용 시간을 조정하거나 병원에 전달합니다.</p></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="구역" id="기능">
+  <div class="안">
+    <div class="섹션머리 등장">
+      <span class="라벨">복약 안내표처럼 읽는 기능</span>
+      <h2>어르신은 버튼 하나, 나머지는 서비스가 합니다</h2>
+      <p>약봉투 뒷면의 복약 안내표 형식을 빌렸습니다. 오늘 발표에서는 두 번째 줄을 실제로 눌러 보여드립니다.</p>
+    </div>
+    <table class="안내표 등장">
+      <thead><tr><th>기능</th><th>어르신이 하는 일</th><th>서비스가 하는 일</th></tr></thead>
+      <tbody>
+        <tr><td>약 등록<small>처음 한 번</small></td><td>약국에서 약사와 함께 약봉투를 보며 이름과 시간을 등록</td><td>병원이 달라도 아침·점심·저녁 세 칸으로 정리<ul><li>복수 시간대 선택</li><li>한 번 등록하면 매일 반복</li></ul></td></tr>
+        <tr class="시연행"><td>오늘 복약 체크<small>매일</small></td><td>약을 먹고 "먹었어요" 버튼 하나</td><td>시간을 기록하고 칸에 도장<ul><li>잘못 누르면 한 번 더 눌러 취소</li><li>글자 20px 이상, 버튼은 화면 폭 전체</li></ul></td></tr>
+        <tr><td>가족 공유<small>자동</small></td><td>아무것도 안 해도 됨</td><td>자녀 화면에 오늘 상태 표시, 저녁 8시까지 체크가 없으면 알림과 전화 버튼<ul><li>필요한 날에만 전화</li><li>방문간호 때 한 달 기록 열람</li></ul></td></tr>
+      </tbody>
+    </table>
+    <p style="margin-top:32px" class="등장"><a class="버튼" href="#시연"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg> 시연 화면에서 눌러보기</a></p>
+  </div>
+</section>
+
+<section class="구역 연한" id="운영">
+  <div class="안">
+    <div class="지도">
+      <div class="등장">
+        <svg class="지도선" viewBox="0 0 520 360" role="img" aria-label="약국에서 집, 집에서 보건소로 이어지는 운영 흐름">
+          <path class="길" d="M70 290 C 120 200, 180 120, 260 110 S 420 150, 450 70"/>
+          <circle class="점" cx="70" cy="290" r="12"/>
+          <text x="70" y="330" text-anchor="middle">감나무골 약국</text>
+          <text class="작은" x="70" y="346" text-anchor="middle">처음 등록을 도움</text>
+          <circle class="점" cx="260" cy="110" r="12"/>
+          <text x="260" y="80" text-anchor="middle">어르신 집</text>
+          <text class="작은" x="260" y="96" text-anchor="middle">매일 버튼 하나</text>
+          <circle class="점 도장" cx="450" cy="70" r="12"/>
+          <text x="450" y="40" text-anchor="middle">사하구 보건소</text>
+          <text class="작은" x="450" y="56" text-anchor="middle">방문간호 때 기록 확인</text>
+          <path class="길" d="M260 110 C 300 200, 330 250, 400 300" stroke-dasharray="3 8"/>
+          <circle class="점 도장" cx="400" cy="300" r="10"/>
+          <text x="400" y="336" text-anchor="middle">딸 (서울)</text>
+          <text class="작은" x="400" y="352" text-anchor="middle">화면으로 확인, 8시 알림</text>
+        </svg>
+      </div>
+      <div class="지도설명 등장">
+        <span class="라벨">운영 구조</span>
+        <h2>앱이 아니라 사람이 시작점입니다</h2>
+        <p class="흐림">어르신이 혼자 앱을 깔고 설정하는 단계를 없앴습니다. 약을 받는 자리에서 등록이 시작되고, 보건소 방문간호가 기록을 이어받습니다.</p>
+        <dl>
+          <dt>동네 약국</dt><dd>처방약을 받을 때 약사가 휴대폰에 약을 등록하고 사용법을 한 번 보여드립니다.</dd>
+          <dt>어르신과 가족</dt><dd>어르신은 매일 버튼을 누르고, 가족은 화면으로 확인합니다.</dd>
+          <dt class="도장">구 보건소</dt><dd>방문간호 때 한 달 기록을 함께 보고, 복용 시간 조정이나 병원 전달이 필요하면 연결합니다.</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="구역" id="시연">
+  <div class="안">
+    <div class="섹션머리 등장">
+      <span class="라벨">시연</span>
+      <h2>세 화면이 한 데이터로 움직입니다</h2>
+      <p>오늘 체크에서 누른 결과가 가족 화면과 위의 약봉투 도장에 그대로 반영됩니다. 실제 서버 없이 이 페이지 안에서만 동작합니다.</p>
+    </div>
+    <div class="시연틀 등장">
+      <div>
+        <div class="시연-탭" role="tablist">
+          <button role="tab" data-탭="등록" aria-selected="true" onclick="탭보이기('등록')">1. 약 등록</button>
+          <button role="tab" data-탭="오늘" aria-selected="false" onclick="탭보이기('오늘')">2. 오늘 체크</button>
+          <button role="tab" data-탭="가족" aria-selected="false" onclick="탭보이기('가족')">3. 가족 화면</button>
+        </div>
+        <div class="화면 보임" id="화면-등록">
+          <div class="폰">
+            <p class="폰제목">내 약</p>
+            <p class="날짜"></p>
+            <ul class="약목록"></ul>
+            <button class="버튼 테두리" type="button" onclick="추가폼열기()">약 추가</button>
+            <form class="추가폼" id="추가폼" hidden>
+              <label for="새약이름">약 이름</label>
+              <input type="text" id="새약이름" placeholder="예: 콜레스테롤약">
+              <span style="display:block;font-weight:700;margin-bottom:6px">먹는 시간</span>
+              <div class="시간선택">
+                <label><input type="checkbox" name="새약시간" value="아침"><span>아침</span></label>
+                <label><input type="checkbox" name="새약시간" value="점심"><span>점심</span></label>
+                <label><input type="checkbox" name="새약시간" value="저녁"><span>저녁</span></label>
+              </div>
+              <button class="버튼" type="submit">등록하기</button>
+              <p id="추가안내" class="흐림" style="margin:12px 0 0"></p>
+            </form>
+          </div>
+        </div>
+        <div class="화면" id="화면-오늘">
+          <div class="폰">
+            <p class="폰제목">오늘 약</p>
+            <p class="날짜"></p>
+            <div class="오늘체크틀"></div>
+            <p class="흐림" style="font-size:.85rem;margin:8px 0 0">잘못 눌렀으면 한 번 더 누르면 취소돼요.</p>
+          </div>
+        </div>
+        <div class="화면" id="화면-가족">
+          <div class="폰">
+            <p class="폰제목">어머니 오늘 약</p>
+            <p class="날짜"></p>
+            <div id="가족상태"></div>
+            <div id="가족알림" class="알림"></div>
+            <p class="흐림" style="font-size:.85rem;margin:18px 0 0">박지은(딸) 화면 · 서울에서 보는 중</p>
+          </div>
+        </div>
+      </div>
+      <div class="시연설명">
+        <div data-설명="등록">
+          <h3>1. 약 등록</h3>
+          <p>이미 등록된 약 4개가 보입니다. "약 추가"를 누르면 이름과 시간대를 고르는 칸이 열리고, 등록하면 목록에 붙습니다. 병원이 달라도 한 목록으로 모이는 것을 보여주는 화면입니다.</p>
+          <p class="흐림">실제 서비스에서는 약사가 이 화면을 함께 보며 등록합니다. 약봉투 사진 인식은 다음 단계입니다.</p>
+        </div>
+        <div data-설명="오늘" hidden>
+          <h3>2. 오늘 복약 체크</h3>
+          <p>아침은 이미 8시 12분에 체크된 상태입니다. 점심 "먹었어요"를 누르면 초록색으로 바뀌고 지금 시각이 적힙니다. 한 번 더 누르면 취소됩니다.</p>
+          <p class="흐림">버튼을 화면 폭 전체로 키우고 글자를 20px 이상으로 잡은 이유는 어르신 휴대폰의 큰 글씨 모드와 같은 감각을 주기 위해서입니다.</p>
+        </div>
+        <div data-설명="가족" hidden>
+          <h3>3. 가족 화면</h3>
+          <p>딸 박지은 씨가 보는 화면입니다. 2번에서 누른 결과가 그대로 반영됩니다. 안 먹은 시간대가 있으면 "아직이에요" 문구와 전화 버튼이 보이고, 모두 드시면 알림이 사라집니다.</p>
+          <p class="흐림">실제 계정 연결과 8시 알림 발송은 다음 단계이고, 지금은 같은 페이지 안에서 상태를 공유합니다.</p>
+        </div>
+        <div class="단계표" data-설명="항상">
+          <h3 style="font-size:1.1rem;font-family:inherit;font-weight:800">발표 때 보여주는 순서</h3>
+          <table>
+            <thead><tr><th>순서</th><th>누르는 곳</th><th>보여줄 것</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>약 등록 → 약 추가 → 이름 입력, 저녁 체크 → 등록하기</td><td>병원이 달라도 한 목록</td></tr>
+              <tr><td>2</td><td>오늘 체크 → 점심 "먹었어요"</td><td>초록색과 시간 기록, 위 약봉투에 도장</td></tr>
+              <tr><td>3</td><td>가족 화면</td><td>점심이 반영됨. 저녁은 "아직"이라 알림과 전화 버튼</td></tr>
+              <tr><td>4</td><td>오늘 체크 → 저녁 "먹었어요" → 가족 화면</td><td>알림이 사라지고 "모두 드셨어요"</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="구역 연한" id="범위">
+  <div class="안">
+    <div class="둘로">
+      <div class="섹션머리 등장" style="margin-bottom:0">
+        <span class="라벨">솔직한 범위</span>
+        <h2>오늘 실제로 되는 것과 흉내만 낸 것</h2>
+        <p>프로토타입은 서버 없이 한 페이지 안에서 동작합니다. 무엇이 진짜이고 무엇이 다음 단계인지 심사위원께 그대로 말씀드립니다.</p>
+      </div>
+      <table class="범위표 등장">
+        <thead><tr><th>기능</th><th>오늘 시연</th><th>다음 단계</th></tr></thead>
+        <tbody>
+          <tr><td>약 등록</td><td>이름과 시간대를 직접 입력해 목록에 추가</td><td>약봉투 사진 인식, 처방전 연동</td></tr>
+          <tr><td>오늘 복약 체크</td><td>버튼을 누르면 시간 기록, 도장, 재클릭 취소</td><td>기록 저장, 날짜별 달력</td></tr>
+          <tr><td>가족 공유</td><td>같은 페이지 안에서 상태 반영</td><td>계정 연결, 8시 알림 발송, 전화 연결</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="구역" id="팀">
+  <div class="안">
+    <div class="둘로">
+      <div>
+        <div class="섹션머리 등장">
+          <span class="라벨">3조</span>
+          <h2>세 학과가 각자 전공에서 가져온 것</h2>
+          <p>간호·보건행정·사회복지가 모였습니다. 이름은 샘플용 가명입니다.</p>
+        </div>
+        <div class="처방전 등장">
+          <table>
+            <tr><td>이서연<small>간호학과</small></td><td>복약 지도 실습 경험으로 시간대 구분(식후 30분, 저녁 8시 기준)과 어르신 화면의 글자 크기를 정함</td></tr>
+            <tr><td>김도현<small>보건행정과</small></td><td>약국·보건소가 운영 주체가 되는 구조와 방문간호 연계 흐름을 설계. 발표 자료 담당</td></tr>
+            <tr><td>박민지<small>사회복지과</small></td><td>1일차 이해관계자 분석에서 자녀의 부담을 핵심 문제로 끌어냄. 화면 문구 담당</td></tr>
+            <tr><td>최준호<small>보건행정과</small></td><td>Claude Code에 지시하고 결과를 브라우저에서 확인하는 역할. 시연 리허설 담당</td></tr>
+          </table>
+        </div>
+      </div>
+      <div class="등장">
+        <span class="라벨">AI를 어떻게 썼나</span>
+        <h2 style="font-size:1.6rem">오늘 네 시간 동안 한 일</h2>
+        <p class="흐림">심사 항목 "생성형 AI 활용 적절성과 바이브코딩 구현 과정"에 답하기 위해 적었습니다.</p>
+        <ol class="과정">
+          <li>강사가 준 CLAUDE.md로 시작. "claude.md 파일을 읽고 html 페이지 작성 시작해"라고 하자 디자인 방향 세 가지 중 하나를 고르라고 했고, 우리는 대화로 정하기(C)를 골라 "약봉투"를 첫 화면의 중심으로 삼았습니다.</li>
+          <li>6묶음 질문에 1일차 문제정의서를 보며 답했고, 기획서.md와 DESIGN.md가 만들어졌습니다.</li>
+          <li>뼈대 → 문제 → 하루 → 기능 → 시연 → 팀 순서로 한 단계씩 만들고 매번 브라우저에서 확인했습니다.</li>
+          <li>"만족도 95%" 같은 근거 없는 수치를 지우게 하고, 기능 나열을 "김순자 어르신의 하루"로 바꿔 달라고 했습니다.</li>
+          <li>마지막에 "AI 티 나는 부분 찾아서 고쳐줘"와 "제출 점검해줘"를 실행했습니다.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="안">
+    <div>
+      <h4>오늘약 · 3조</h4>
+      <p>2026 AIDX 기반 부산광역시 지역사회 현안 해결 아이디어톤<br>헬스케어 분야 · 고령자 만성질환과 복약관리</p>
+    </div>
+    <div><h4>페이지</h4><ul><li><a href="#소개">소개</a></li><li><a href="#문제">문제</a></li><li><a href="#하루">하루</a></li><li><a href="#기능">기능</a></li><li><a href="#시연">시연</a></li><li><a href="#팀">팀</a></li></ul></div>
+    <div><h4>운영 주체(안)</h4><ul><li>감나무골 약국 (가상)</li><li>사하구 보건소 방문간호팀 (가상)</li></ul></div>
+    <div class="바닥">등장하는 인물·장소·기관은 모두 가상이며, 이 페이지는 발표용 프로토타입입니다. 실제 서버와 연결되어 있지 않습니다.</div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
